@@ -1296,7 +1296,7 @@ getSymbols.av <- function(Symbols, env, api.key,
       #
       meta <- lst[[1]]
       tz <- meta[["6. Time Zone"]]
-      updated <- convertTimestamps(meta[["3. Last Refreshed"]], periodicity, tz=tz)
+      updated <- convertTimestamps(meta[["3. Last Refreshed"]], periodicity, tz="Europe/London")
 
       #
       # The second element of 'lst' is the data: a list.

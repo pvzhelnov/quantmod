@@ -1253,7 +1253,7 @@ getSymbols.av <- function(Symbols, env, api.key,
     sym.name <- getSymbolLookup()[[sym]]$name
     sym.name <- if (is.null(sym.name)) sym else sym.name
     
-    FUNCTION <- paste0("TIME_SERIES_",
+    FUNCTION <- paste0("CRYPTO_",
       switch(periodicity,
              daily = if (adjusted) "DAILY_ADJUSTED" else "DAILY",
              weekly = if (adjusted) "WEEKLY_ADJUSTED" else "WEEKLY",
@@ -1264,7 +1264,7 @@ getSymbols.av <- function(Symbols, env, api.key,
     
     URL <- paste0("https://www.alphavantage.co/query",
                   "?function=", FUNCTION,
-                  "&symbol=", sym.name,
+                  "&symbol=", sym.name, "&market=USD",
                   "&interval=", interval,
                   "&outputsize=", output.size,
                   "&datatype=", data.type,
